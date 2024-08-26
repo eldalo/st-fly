@@ -1,5 +1,5 @@
 import styles from '../field.module.css';
-import { Field, ErrorMessage } from 'formik';
+import { useField, ErrorMessage } from 'formik';
 import classNames from 'classnames';
 
 type FieldTextAreaProps = {
@@ -15,19 +15,19 @@ export const FieldTextArea = ({
   name,
   label,
   className = '',
-  placeholder = '',
+  ...props
 }: FieldTextAreaProps) => {
+  const [field] = useField({ ...props, name });
+
   return (
     <div className={styles.wrapper}>
       <label className={styles.label} htmlFor={id}>
         {label}
       </label>
-      <Field
-        id={id}
-        name={name}
-        type="textarea"
+      <textarea
+        {...field}
+        {...props}
         className={classNames([styles.textarea, className])}
-        placeholder={placeholder}
       />
       <ErrorMessage name={name} component="div" className={styles.error} />
     </div>
