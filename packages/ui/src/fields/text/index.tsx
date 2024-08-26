@@ -5,8 +5,8 @@ import classNames from 'classnames';
 type FieldTextProps = {
   id: string;
   name: string;
-  type: string;
-  label: string;
+  type?: string;
+  label?: string;
   className?: string;
   placeholder?: string;
 };
@@ -21,9 +21,11 @@ export const FieldText = ({
 }: FieldTextProps) => {
   return (
     <div className={styles.wrapper}>
-      <label className={styles.label} htmlFor={id}>
-        {label}
-      </label>
+      {label && (
+        <label className={styles.label} htmlFor={id}>
+          {label}
+        </label>
+      )}
       <Field
         id={id}
         name={name}
