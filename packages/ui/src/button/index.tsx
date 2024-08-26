@@ -6,16 +6,16 @@ import {
   BUTTON_STYLE,
   BUTTON_ROUNDED,
   BUTTON_WIDTH
-} from '../type';
+} from './type';
 
 type ButtonProps = {
   type: 'button' | 'submit';
-  theme: BUTTON_STYLE;
   children: React.ReactNode;
-  className?: string;
+  theme: BUTTON_STYLE;
   size?: BUTTON_SIZE;
   rounded?: BUTTON_ROUNDED;
   width?: BUTTON_WIDTH
+  className?: string;
   disabled?: boolean;
   onClick?: () => void;
 }
