@@ -109,6 +109,14 @@ ex: `app/users/project.json`
 
 [Button Component](https://github.com/eldalo/st-fly/tree/master/packages/ui/src/button)
 
+## Integration API
+
+Use [Coin Gecko API](https://docs.coingecko.com/reference/introduction)
+
+## Unit Tests
+
+😭 Pending
+
 ## Responsive
 
 [View Video](https://www.loom.com/share/0d9003c94dbc407488dd9a79785d1c6c?sid=9dcc0cec-8bab-4eed-89fd-7e6f0b529014)
