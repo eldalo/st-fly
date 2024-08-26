@@ -30,9 +30,18 @@
   padding: 30px;
   scale: 0;
   transition: scale 0.3s ease, display 0.3s ease allow-discrete;
-  width: 50%;
+  width: 90%;
 }
 
 .container_show {
   scale: 1;
+}
+
+/* Large Devices (>=992px) */
+@media (min-width: 992px) {
+  .container {
+    min-height: 300px;
+    padding: 30px;
+    width: 50%;
+  }
 }

@@ -1,4 +1,4 @@
-export * from './buttons';
+export * from './button';
 export * from './chart';
 export * from './errors';
 export * from './fields';

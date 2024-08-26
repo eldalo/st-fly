@@ -1,5 +1,16 @@
+.responsive {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.responsive::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
 .table {
   border-collapse: collapse;
+  min-width: 100%;
   width: 100%;
 }
 
@@ -65,4 +76,11 @@
 
 .sorted_active {
   align-items: center;
+}
+
+/* Large Devices (>=992px) */
+@media (min-width: 992px) {
+  .responsive {
+    overflow-x: initial;
+  }
 }
