@@ -1,6 +1,7 @@
 import styles from '../form.module.css';
 import { Formik, Form } from 'formik';
 import { useDispatch } from 'react-redux';
+import { toast } from 'sonner';
 
 import { addUser, editUser } from '@st-fly/hooks';
 import { generateNanoId, SCHEMA_USERS } from '@st-fly/shared';
@@ -31,8 +32,10 @@ export const UserForm = ({
   const handleSubmit = (user: UserType, { resetForm }: { resetForm: () => void }) => {
     if (type === 'add') {
       dispatch(addUser({ ...user, id: generateNanoId(5) }));
+      toast.success('User added successfully');
     } else {
       dispatch(editUser(user));
+      toast.success('User updated successfully');
     }
 
     resetForm();

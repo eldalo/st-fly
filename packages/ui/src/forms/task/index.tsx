@@ -1,6 +1,7 @@
 import styles from '../form.module.css';
 import { Formik, Form } from 'formik';
 import { useDispatch } from 'react-redux';
+import { toast } from 'sonner';
 
 import { addTask, editTask } from '@st-fly/hooks';
 import { generateNanoId, SCHEMA_TASKS } from '@st-fly/shared';
@@ -30,8 +31,10 @@ export const TaskForm = ({
   const handleSubmit = (user: TaskType, { resetForm }: { resetForm: () => void }) => {
     if (type === 'add') {
       dispatch(addTask({ ...user, id: generateNanoId(5) }));
+      toast.success('Task added successfully');
     } else {
       dispatch(editTask(user));
+      toast.success('Task updated successfully');
     }
 
     resetForm();

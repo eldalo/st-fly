@@ -1,5 +1,6 @@
 import styles from './layout.module.css';
 import { NavLink, Outlet } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import classNames from 'classnames';
 
 export const LayoutApp = () => {
@@ -26,6 +27,15 @@ export const LayoutApp = () => {
       </header>
       <main className={styles.main_wrapper}>
         <section className={classNames('container', [styles.main_container])}>
+          <Toaster
+            richColors
+            closeButton
+            icons={{
+              success: <i className="icon-Atom_Icon-Circular-done" />,
+              error: <i className="icon-Atom_Icon-Alert" />,
+              warning: <i className="icon-Atom_Icon-Warning" />,
+            }}
+          />
           <Outlet />
         </section>
       </main>

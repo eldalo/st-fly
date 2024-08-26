@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ColumnDef } from '@tanstack/react-table';
+import { toast } from 'sonner';
 
 import { selectTasks, deleteTask } from '@st-fly/hooks';
 import { TaskType } from '@st-fly/types';
@@ -28,6 +29,7 @@ export function App() {
 
   const handleDeleteTask = (id: string) => {
     dispatch(deleteTask(id));
+    toast.success('Task deleted successfully');
   };
 
   const columns = useMemo<ColumnDef<TaskType>[]>(

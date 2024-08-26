@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'sonner';
 
 const NX_COINGECKO_API = process.env.NX_COINGECKO_API;
 const NX_COINGECKO_CURRENCY = process.env.NX_COINGECKO_CURRENCY;
@@ -16,7 +17,7 @@ export const fetchCoinData = async () => {
     });
     return response.data;
   } catch (error) {
-    console.error('Error from CoinAPI:', error);
+    toast.error(`Error from CoinAPI: ${error}`);
     throw error;
   }
 };

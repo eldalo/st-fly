@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ColumnDef } from '@tanstack/react-table';
+import { toast } from 'sonner';
 
 import { selectUsers, deleteUser } from '@st-fly/hooks';
 import { UserType } from '@st-fly/types';
@@ -28,6 +29,7 @@ export function App() {
 
   const handleDeleteUser = (id: string) => {
     dispatch(deleteUser(id));
+    toast.success('User deleted successfully');
   };
 
   const columns = useMemo<ColumnDef<UserType>[]>(
