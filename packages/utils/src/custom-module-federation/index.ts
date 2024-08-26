@@ -19,7 +19,9 @@ export const withCustomModuleFederation =
       {},
     );
 
-    const federatedModules = await withModuleFederation(configFederation);
+    const federatedModules = await withModuleFederation(configFederation, {
+      dts: false,
+    });
     return merge(federatedModules(config, context), {
       plugins: [...(config.plugins ?? []), new webpack.DefinePlugin(envs)],
     });
