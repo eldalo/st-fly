@@ -1,0 +1,42 @@
+export const USERS_MOCK = [
+  {
+    id: '7dafe58d-04d8-4069-a18e-ec0ecd0b07ce',
+    name: 'Carroll Beier',
+    email: 'Donny_Okuneva@gmail.com',
+    phone: '838.341.6064',
+    createdAt: 'Mon Dec 05 1977 06:41:54 GMT-0500 (hora estándar de Colombia)',
+    updatedAt: 'Wed Jul 02 1975 04:53:56 GMT-0500 (hora estándar de Colombia)',
+  },
+  {
+    id: '83514b8f-d4ec-4281-938b-f17b0dd30249',
+    name: 'Gust Smith',
+    email: 'Lorenz.Cruickshank75@example.com',
+    phone: '339.822.3159',
+    createdAt: 'Sun Jul 17 2016 10:26:24 GMT-0500 (hora estándar de Colombia)',
+    updatedAt: 'Wed Sep 09 2015 13:41:15 GMT-0500 (hora estándar de Colombia)',
+  },
+  {
+    id: 'bd0d4c70-428b-4b47-b8e6-f7e1ac4dcf98',
+    name: 'Jamar Gibson',
+    email: 'Grant_Paucek14@example.com',
+    phone: '624-945-4598 x5761',
+    createdAt: 'Sun Oct 22 1995 17:20:12 GMT-0500 (hora estándar de Colombia)',
+    updatedAt: 'Wed Mar 06 2002 22:51:06 GMT-0500 (hora estándar de Colombia)',
+  },
+  {
+    id: 'd30fbc24-cad8-4e3c-9bc8-758e073d9fb6',
+    name: 'Tanner Quigley',
+    email: 'Peter65@gmail.com',
+    phone: '(717) 243-6150 x68548',
+    createdAt: 'Sat Sep 28 1991 05:12:10 GMT-0500 (hora estándar de Colombia)',
+    updatedAt: 'Fri Jul 31 2009 02:40:31 GMT-0500 (hora estándar de Colombia)',
+  },
+  {
+    id: '465316d5-1664-4c1b-bd71-555cbc2956bf',
+    name: 'Efrain Daugherty',
+    email: 'Raul_Ward27@gmail.com',
+    phone: '930.466.4545 x184',
+    createdAt: 'Wed Oct 24 2012 04:55:27 GMT-0500 (hora estándar de Colombia)',
+    updatedAt: 'Sun Jan 04 1998 19:28:43 GMT-0500 (hora estándar de Colombia)',
+  },
+];

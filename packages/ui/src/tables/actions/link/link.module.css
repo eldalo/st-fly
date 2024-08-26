@@ -1,0 +1,10 @@
+.link {
+  color: var(--color-primary);
+  font: 14px/16px var(--font-regular);
+  transition: all 0.15s ease-in-out;
+}
+
+.link:hover {
+  color: var(--color-primary-light);
+  font-family: var(--font-bold);
+}

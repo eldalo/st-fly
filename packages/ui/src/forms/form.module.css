@@ -1,0 +1,10 @@
+.form {
+  display: block;
+}
+
+.title {
+  color: var(--color-primary-dark);
+  font: 22px/24px var(--font-bold);
+  margin-bottom: 24px;
+  margin-top: 0;
+}

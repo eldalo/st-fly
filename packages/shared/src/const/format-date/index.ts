@@ -1,0 +1,10 @@
+export const FORMAT_DATE_TIME = 'EE, MMM dd/yyyy hh:mm a';
+export const FORMAT_DATE_TIME_LONG = 'EE | MMM dd/yyyy hh:mm:ss a';
+export const FORMAT_DATE_TIME_SHORT = 'EE | MMM dd/yyyy hh:mm a';
+export const FORMAT_DATE_LONG = 'EE | MMM dd/yyyy';
+export const FORMAT_DATE_SHORT = 'MM/dd/yyyy';
+export const FORMAT_TIME_LONG = 'hh:mm:ss a';
+export const FORMAT_TIME_SHORT = 'hh:mm a';
+export const FORMAT_STANDARD_DATE = 'MM/dd/yyyy hh:mm a';
+export const FORMAT_BIRTHDAY = 'MMM dd';
+export const FORMAT_DEFAULT_US = 'yyyy-MM-dd';

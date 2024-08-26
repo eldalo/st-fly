@@ -1,0 +1,179 @@
+.base {
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  display: flex;
+  font: 14px/16px var(--font-bold);
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.25s linear;
+}
+
+.base:disabled {
+  background-color: var(--color-input-disabled);
+  border-color: var(--color-input-disabled);
+  color: var(--color-input-label);
+  cursor: not-allowed;
+}
+
+.base i {
+  margin-left: 5px;
+}
+
+.rounded_5 {
+  border-radius: 5px;
+}
+
+.rounded_10 {
+  border-radius: 10px;
+}
+
+.rounded_20 {
+  border-radius: 20px;
+}
+
+.large {
+  height: 46px;
+  padding: 12px 40px;
+}
+
+.medium {
+  height: 40px;
+  padding: 8px 16px;
+}
+
+.small {
+  height: 36px;
+  padding: 8px 14px;
+}
+
+.width_auto {
+  width: auto;
+}
+
+.width_50 {
+  width: 50%;
+}
+
+.width_100 {
+  width: 100%;
+}
+
+.primary {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.primary:hover,
+.primary:focus {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.success {
+  background-color: var(--color-success-light);
+  border-color: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.success:hover,
+.success:focus {
+  background-color: var(--color-success-dark);
+  border-color: var(--color-success-dark);
+  color: var(--color-white);
+}
+
+.danger {
+  background-color: var(--color-danger-light);
+  border-color: var(--color-danger-light);
+  color: var(--color-danger-dark);
+}
+
+.danger:hover,
+.danger:focus {
+  background-color: var(--color-danger-dark);
+  border-color: var(--color-danger-dark);
+  color: var(--color-white);
+}
+
+.warning {
+  background-color: var(--color-warning-light);
+  border-color: var(--color-warning-light);
+  color: var(--color-warning-dark);
+}
+
+.warning:hover,
+.warning:focus {
+  background-color: var(--color-warning-dark);
+  border-color: var(--color-warning-dark);
+  color: var(--color-white);
+}
+
+.white {
+  background-color: var(--color-white);
+  border-color: var(--color-gray-white);
+  color: var(--color-input);
+}
+
+.white:hover,
+.white:focus {
+  background-color: var(--color-input);
+  border-color: var(--color-input);
+  color: var(--color-white);
+}
+
+.dark {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.dark:hover,
+.dark:focus {
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.link {
+  color: var(--color-primary-light);
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.link:visited {
+  color: var(--color-primary-light);
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.reset {
+  background: transparent;
+  border: none;
+  padding: 4px;
+}
+
+.reset i {
+  color: var(--color-primary-light);
+}
+
+.reset i:hover {
+  color: var(--color-primary);
+}
+
+.max_width {
+  width: 100%;
+}
+
+.max_height {
+  height: 100%;
+}
