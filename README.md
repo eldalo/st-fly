@@ -100,39 +100,78 @@ ex: `app/users/project.json`
 
 ## Environment Variables
 
-| Variable Name              | Description              | Default Value                                    | Required |
-| -------------------------- | ------------------------ | ------------------------------------------------ | -------- |
-| `NX_COINGECKO_API`         | Base URL Coin Gecko API  | `https://api.coingecko.com/api/v3/coins/markets` | Yes      |
-| `NX_COINGECKO_CURRENCY`    | Currency Coin Gecko      |  `usd`                                           | Yes      |
+| Variable Name           | Description             | Default Value                                    | Required |
+| ----------------------- | ----------------------- | ------------------------------------------------ | -------- |
+| `NX_COINGECKO_API`      | Base URL Coin Gecko API | `https://api.coingecko.com/api/v3/coins/markets` | Yes      |
+| `NX_COINGECKO_CURRENCY` | Currency Coin Gecko     | `usd`                                            | Yes      |
 
 ## Custom Component
+
 [Button Component](https://github.com/eldalo/st-fly/tree/master/packages/ui/src/button)
 
 ## Responsive
+
 [View Video](https://www.loom.com/share/0d9003c94dbc407488dd9a79785d1c6c?sid=9dcc0cec-8bab-4eed-89fd-7e6f0b529014)
+
+## Error Handling
+
+The Sonner library is implemented
+
+```bash
+npm install sonner
+```
+
+### Use
+
+#### Success message
+
+```bash
+toast.success('Event has been created')
+```
+
+#### Error message
+
+```bash
+toast.error('Error creating event')
+```
+
+#### Alert message
+
+```bash
+toast.warning('Danger in event')
+```
 
 ## Security Measures Report
 
 ### 1. Protection Against XSS Attacks
+
 #### Implemented Measures:
-  - The DOMPurify library is used to sanitize any dynamic HTML or user-generated content that may be rendered in the application.
-  - All HTML insertions with `dangerouslySetInnerHTML` are protected by sanitizing the data before rendering.
+
+- The DOMPurify library is used to sanitize any dynamic HTML or user-generated content that may be rendered in the application.
+- All HTML insertions with `dangerouslySetInnerHTML` are protected by sanitizing the data before rendering.
+
 #### Justification:
-  - XSS attacks can occur when dynamic content is injected into the application without proper validation. DOMPurify ensures that any malicious code is removed before being displayed in the DOM, mitigating the risks of XSS injections.
+
+- XSS attacks can occur when dynamic content is injected into the application without proper validation. DOMPurify ensures that any malicious code is removed before being displayed in the DOM, mitigating the risks of XSS injections.
 
 ### 2. Input Validation and Sanitization
+
 #### Implemented Measures:
-  - Yup is used to validate all user inputs on the frontend. Fields such as name, email, phone and description are validated to ensure they adhere to expected formats.
-  - Sanitization is enforced using functions like `.trim()` to remove unnecessary spaces and regular expressions to restrict allowed characters.
+
+- Yup is used to validate all user inputs on the frontend. Fields such as name, email, phone and description are validated to ensure they adhere to expected formats.
+- Sanitization is enforced using functions like `.trim()` to remove unnecessary spaces and regular expressions to restrict allowed characters.
 
 #### Justification:
+
 - Validating and sanitizing user inputs is critical to prevent malicious data from entering the system. It ensures that only expected data is submitted, preventing vulnerabilities such as SQL injection and stored XSS.
 
 ### 3. Error Management
+
 #### Implemented Measures:
-  - A global interceptor has been implemented to manage network errors in the application, ensuring proper handling of HTTP errors.
-  - A reusable error notification component provides clear messages to users when issues arise.
+
+- A global interceptor has been implemented to manage network errors in the application, ensuring proper handling of HTTP errors.
+- A reusable error notification component provides clear messages to users when issues arise.
 
 #### Justification:
-  - Proper error management ensures that the application behaves predictably in case of request failures or input validation errors. It prioritizes both user experience and system security.
 
+- Proper error management ensures that the application behaves predictably in case of request failures or input validation errors. It prioritizes both user experience and system security.
