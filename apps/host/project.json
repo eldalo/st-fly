@@ -22,7 +22,7 @@
         "main": "apps/host/src/main.ts",
         "tsConfig": "apps/host/tsconfig.app.json",
         "assets": [
-          "apps/host/src/favicon.ico",
+          "apps/host/src/favicon.png",
           "apps/host/src/assets"
         ],
         "styles": [],
