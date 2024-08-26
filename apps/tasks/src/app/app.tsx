@@ -1,16 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from './app.module.css';
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ColumnDef } from '@tanstack/react-table';
 
-import {
-  selectTasks,
-  addTask,
-  editTask,
-  deleteTask
-} from '@st-fly/hooks';
-import { generateNanoId } from '@st-fly/shared';
+import { selectTasks, deleteTask } from '@st-fly/hooks';
 import { TaskType } from '@st-fly/types';
 import {
   Button,
@@ -21,38 +16,19 @@ import {
 } from '@st-fly/ui';
 
 export function App() {
-  const taskDefault: TaskType = {
-    id: '',
-    name: '',
-    description: ''
-  };
   const dispatch = useDispatch();
   const { loading, items: tasks } = useSelector(selectTasks);
 
-  const [task, setTask] = useState(taskDefault);
+  const [taskData, setTaskData] = useState<TaskType>();
   const [showAddTask, isShowAddTask] = useState(false);
   const toggleShowAddTask = () => isShowAddTask(!showAddTask);
 
   const [showEditTask, isShowEditTask] = useState(false);
-  const toggleShowEditTask = useCallback(() => isShowEditTask(!showEditTask), [showEditTask]);
+  const toggleShowEditTask = () => isShowEditTask(!showEditTask);
 
-  const handleAddTask = (task: TaskType) => {
-    dispatch(addTask({ ...task, id: generateNanoId(5) }));
-    toggleShowAddTask();
-  };
-
-  const handleShowEditTask = useCallback((task: TaskType) => {
-    setTask(task);
-    toggleShowEditTask();
-  }, [setTask, toggleShowEditTask]);
-
-  const handleEditTask = (task: TaskType) => {
-    dispatch(editTask(task));
-  };
-
-  const handleDeleteTask = useCallback((id: string) => {
+  const handleDeleteTask = (id: string) => {
     dispatch(deleteTask(id));
-  }, [dispatch]);
+  };
 
   const columns = useMemo<ColumnDef<TaskType>[]>(
     () => [
@@ -82,7 +58,10 @@ export function App() {
             <Button
               type="button"
               theme="reset"
-              onClick={() => handleShowEditTask(row.original)}
+              onClick={() => {
+                setTaskData(row.original);
+                toggleShowEditTask();
+              }}
             >
               Edit <i className="icon-Atom_Icon-edit-list" />
             </Button>
@@ -97,7 +76,7 @@ export function App() {
         ),
       },
     ],
-    [handleDeleteTask, handleShowEditTask]
+    []
   );
 
   const renderTasks = () => {
@@ -133,18 +112,19 @@ export function App() {
       </section>
       <Modal show={showAddTask}>
         <TaskForm
-          data={taskDefault}
+          key="add-task"
           title="Create New Task"
-          buttonSaveOnClick={handleAddTask}
-          buttonCancelOnClick={toggleShowAddTask}
+          type="add"
+          cancelOnClick={toggleShowAddTask}
         />
       </Modal>
       <Modal show={showEditTask}>
         <TaskForm
-          data={task}
+          key="edit-task"
+          data={taskData}
           title="Edit Task"
-          buttonSaveOnClick={handleEditTask}
-          buttonCancelOnClick={toggleShowEditTask}
+          type="edit"
+          cancelOnClick={toggleShowEditTask}
         />
       </Modal>
     </>

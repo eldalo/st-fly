@@ -5,13 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ColumnDef } from '@tanstack/react-table';
 
-import {
-  selectUsers,
-  addUser,
-  editUser,
-  deleteUser
-} from '@st-fly/hooks';
-import { generateNanoId } from '@st-fly/shared';
+import { selectUsers, deleteUser } from '@st-fly/hooks';
 import { UserType } from '@st-fly/types';
 import {
   Button,
@@ -22,39 +16,15 @@ import {
 } from '@st-fly/ui';
 
 export function App() {
-  const userDefault = {
-    id: '',
-    name: '',
-    email: '',
-    phone: '',
-  };
-
   const dispatch = useDispatch();
   const { loading, items: users } = useSelector(selectUsers);
 
-  const [userData, setUserData] = useState<UserType>(userDefault);
+  const [userData, setUserData] = useState<UserType>();
   const [showAddUser, isShowAddUser] = useState(false);
   const toggleShowAddUser = () => isShowAddUser(!showAddUser);
 
   const [showEditUser, isShowEditUser] = useState(false);
   const toggleShowEditUser = () => isShowEditUser(!showEditUser);
-
-  const handleAddUser = (user: UserType) => {
-    dispatch(addUser({ ...user, id: generateNanoId(5) }));
-    setUserData(userDefault);
-    toggleShowAddUser();
-  };
-
-  const handleShowEditUser = (user: UserType) => {
-    setUserData(user);
-    toggleShowEditUser();
-  };
-
-  const handleEditUser = (user: UserType) => {
-    dispatch(editUser(user));
-    setUserData(userDefault);
-    toggleShowEditUser();
-  };
 
   const handleDeleteUser = (id: string) => {
     dispatch(deleteUser(id));
@@ -97,7 +67,10 @@ export function App() {
             <Button
               type="button"
               theme="reset"
-              onClick={() => handleShowEditUser(row.original)}
+              onClick={() => {
+                setUserData(row.original);
+                toggleShowEditUser();
+              }}
             >
               Edit <i className="icon-Atom_Icon-edit-list" />
             </Button>
@@ -149,10 +122,9 @@ export function App() {
       <Modal show={showAddUser}>
         <UserForm
           key="add-user"
-          data={userData}
           title="Create New User"
-          buttonSaveOnClick={handleAddUser}
-          buttonCancelOnClick={toggleShowAddUser}
+          type="add"
+          cancelOnClick={toggleShowAddUser}
         />
       </Modal>
       <Modal show={showEditUser}>
@@ -160,8 +132,8 @@ export function App() {
           key="edit-user"
           data={userData}
           title="Edit User"
-          buttonSaveOnClick={handleEditUser}
-          buttonCancelOnClick={toggleShowEditUser}
+          type="edit"
+          cancelOnClick={toggleShowEditUser}
         />
       </Modal>
     </>
