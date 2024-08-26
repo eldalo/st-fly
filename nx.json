@@ -62,10 +62,7 @@
     "@nx/webpack:webpack": {
       "inputs": [
         "production",
-        "^production",
-        {
-          "env": "NX_MF_DEV_REMOTES"
-        }
+        "^production"
       ]
     },
     "@nx/js:tsc": {
