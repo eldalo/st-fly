@@ -64,6 +64,7 @@
         "memoryLimit": 1024,
         "parallel": 5,
         "devRemotes": [
+          "host",
           "users",
           "tasks",
           "reports"
