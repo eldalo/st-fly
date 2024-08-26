@@ -1,0 +1,46 @@
+:root {
+  /* Colors */
+  --color-primary-dark: #011923;
+  --color-primary: #04577b;
+  --color-primary-light: #0695d2;
+
+  --color-success-dark: #0a2d35;
+  --color-success: #1b788d;
+  --color-success-light: #2bc2e4;
+
+  --color-danger-dark: #43322b;
+  --color-danger: #7d5c50;
+  --color-danger-light: #d49c88;
+
+  --color-warning-dark: #433d29;
+  --color-warning: #7d714c;
+  --color-warning-light: #d4c082;
+
+  --color-white: #fff;
+  --color-white-light: #f9fafc;
+  --color-white-opacity: #dce0ea40;
+
+  --color-black: #000;
+  --color-black-opacity: #0003;
+
+  --color-input: #9a9a9b;
+  --color-input-disabled: #616162;
+  --color-input-label: #434344;
+
+  --color-gray-dark: #29292a;
+  --color-gray: #7e7e80;
+  --color-gray-light: #d3d3d7;
+
+  /* Typography */
+  --font-bold: 'ProximaNova-Bold', sans-serif;
+  --font-regular: 'ProximaNova-Regular', sans-serif;
+  --font-icon: 'icomoon';
+}
+
+/* Large Devices (>=992px) */
+@media (min-width: 992px) {
+}
+
+/* Extra Large Devices (>=1200px) */
+@media (min-width: 1200px) {
+}

@@ -1,0 +1,218 @@
+/* stylelint-disable selector-class-pattern */
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: var(--font-icon);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: never;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Atom_Icon-revision:before {
+  content: '\e942';
+}
+.icon-Icon-history-bar:before {
+  content: '\e93f';
+}
+.icon-Atom_Icon-move-to-case:before {
+  content: '\e93a';
+}
+.icon-Atom_Icon-arrow-list:before {
+  content: '\e93b';
+}
+.icon-Atom_Icon-arrow-right-up:before {
+  content: '\e93c';
+}
+.icon-Atom_Icon-undo:before {
+  content: '\e93d';
+}
+.icon-Atom_Icon-history:before {
+  content: '\e93e';
+}
+.icon-Atom_Icon-copy:before {
+  content: '\e905';
+}
+.icon-Atom_Icon-Double-arrow:before {
+  content: '\e92b';
+}
+.icon-Atom_Icon-Filters:before {
+  content: '\e92c';
+}
+.icon-Atom_Icon-solution:before {
+  content: '\e91c';
+}
+.icon-Atom_Icon-lead:before {
+  content: '\e91e';
+}
+.icon-Atom_Icon-Idea:before {
+  content: '\e91f';
+}
+.icon-Atom_Icon-birthday:before {
+  content: '\e92a';
+}
+.icon-Atom_Icon-Refresh:before {
+  content: '\e91a';
+}
+.icon-Atom_Icon-Alert:before {
+  content: '\e91b';
+}
+.icon-Atom_Icon-Correct:before {
+  content: '\e907';
+}
+.icon-Atom_Icon-User-fill:before {
+  content: '\e917';
+}
+.icon-Atom_Icon-Menu:before {
+  content: '\e90e';
+}
+.icon-Atom_Icon-Trash:before {
+  content: '\e910';
+}
+.icon-Atom_Icon-Text-section:before {
+  content: '\e925';
+}
+.icon-Atom_Icon-Single-answer:before {
+  content: '\e92f';
+}
+.icon-Atom_Icon-Open-answer:before {
+  content: '\e921';
+}
+.icon-Atom_Icon-edit-list-copy:before {
+  content: '\e945';
+}
+.icon-Atom_Icon-edit-list:before {
+  content: '\e922';
+}
+.icon-Atom_Icon-Add-subsection-copy:before {
+  content: '\e926';
+}
+.icon-Atom_Icon-Dropdown:before {
+  content: '\e927';
+}
+.icon-Atom_Icon-Warning:before {
+  content: '\e928';
+}
+.icon-Atom_Icon-plus:before {
+  content: '\e904';
+}
+.icon-Atom_Icon-multiple-select:before {
+  content: '\e929';
+}
+.icon-Atom_Icon-Information:before {
+  content: '\e902';
+}
+.icon-Atom_Icon-Edit-script:before {
+  content: '\e931';
+}
+.icon-Atom_Icon-Search:before {
+  content: '\e915';
+}
+.icon-Atom_Icon-Right-small-Arrow:before {
+  content: '\e932';
+}
+.icon-Atom_Icon-Left-small-Arrow:before {
+  content: '\e933';
+}
+.icon-Atom_Icon-Up-small-Arrow:before {
+  content: '\e934';
+}
+.icon-Atom_Icon-Down-small-Arrow:before {
+  content: '\e920';
+}
+.icon-Atom_Icon-Circular-done:before {
+  content: '\e935';
+}
+.icon-Atom_Icon-Circular-back:before {
+  content: '\e936';
+}
+.icon-Atom_Icon-Circular-new-user-copy:before {
+  content: '\e937';
+}
+.icon-Atom_Icon-Circular-call-bar:before {
+  content: '\e938';
+}
+.icon-Atom_Icon-User-circle:before {
+  content: '\e939';
+}
+.icon-Atom_Icon-Location:before {
+  content: '\e940';
+}
+.icon-Atom_Icon-Disconnect:before {
+  content: '\e906';
+}
+.icon-Atom_Icon-List:before {
+  content: '\e90c';
+}
+.icon-Atom_Icon-Close:before {
+  content: '\e908';
+}
+.icon-Atom_Icon-user:before {
+  content: '\e918';
+}
+.icon-Atom_Icon-Lamp:before {
+  content: '\e91d';
+}
+.icon-Atom_Icon-Eye:before {
+  content: '\e909';
+}
+.icon-Atom_Icon-Lock:before {
+  content: '\e90d';
+}
+.icon-Atom_Icon-Play:before {
+  content: '\e913';
+}
+.icon-Atom_Icon-On-Off:before {
+  content: '\e911';
+}
+.icon-Atom_Icon-Voicemail:before {
+  content: '\e919';
+}
+.icon-Atom_Icon-Atom_Icon--User-Calling-copy:before {
+  content: '\e923';
+}
+.icon-Atom_Icon-Clock:before {
+  content: '\e924';
+}
+.icon-Atom_Icon-Calendar:before {
+  content: '\e901';
+}
+.icon-Atom_Icon-Call-out:before {
+  content: '\e903';
+}
+.icon-Atom_Icon-Call-play:before {
+  content: '\e914';
+}
+.icon-Atom_Icon-Call-pause:before {
+  content: '\e912';
+}
+.icon-Atom_Icon-Call-hang-up:before {
+  content: '\e90b';
+}
+.icon-Atom_Icon-Forward:before {
+  content: '\e90a';
+}
+.icon-Atom_Icon-Micro-on:before {
+  content: '\e916';
+}
+.icon-Atom_Icon-Micro-mute:before {
+  content: '\e941';
+}
+.icon-Atom_Icon-Web:before {
+  content: '\e92d';
+}
+.icon-Atom_-Icon-Archive:before {
+  content: '\e92e';
+}
+.icon-Atom_-Icon-Comment:before {
+  content: '\e90f';
+}
+.icon-Atom_Icon-Arrow-right:before {
+  content: '\e930';
+}
+.icon-Atom_Icon-Arrow-left:before {
+  content: '\e900';
+}
