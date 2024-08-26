@@ -1,0 +1,18 @@
+.wrapper {
+}
+
+.navigation {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.empty {
+  color: var(--color-white-light);
+  font: 28px/34px var(--font-bold);
+  margin: 42px 0 16px;
+  text-align: center;
+  text-transform: uppercase;
+}
