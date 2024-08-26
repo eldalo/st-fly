@@ -17,9 +17,8 @@ export const SCHEMA_USERS = zodResolver(
       .string({ required_error: DEFAULT_REQUIRED_ERROR })
       .email({ message: 'Invalid email' }),
     phone: z
-      .number({ required_error: DEFAULT_REQUIRED_ERROR })
-      .int({ message: 'Invalid phone' })
-      .gte(10, { message: 'Phone number must be at least 10 characters' })
-      .lte(10, { message: 'Phone number must be at most 10 characters' }),
+      .string({ required_error: DEFAULT_REQUIRED_ERROR })
+      .min(10, { message: 'Phone number must be at least 10 characters' })
+      .max(10, { message: 'Phone number must be at most 10 characters' }),
   }),
 );

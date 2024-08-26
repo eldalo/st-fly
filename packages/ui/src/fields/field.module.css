@@ -45,3 +45,11 @@
   padding-top: 10px;
   resize: none;
 }
+
+.error {
+  color: var(--color-danger-dark);
+  font: 12px/14px var(--font-bold);
+  display: block;
+  margin-top: 5px;
+  padding-left: 15px;
+}

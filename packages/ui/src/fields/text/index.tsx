@@ -32,7 +32,7 @@ export const FieldText = ({
   defaultValue,
 }: FieldTextProps) => {
   const applyRegister = register ? register(name) : {};
-
+  console.log({ applyRegister })
   return (
     <div className={styles.wrapper}>
       <label className={styles.label} htmlFor={id}>
