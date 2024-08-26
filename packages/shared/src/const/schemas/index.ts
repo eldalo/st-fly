@@ -1,24 +1,17 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import * as Yup from 'yup';
 
 const DEFAULT_REQUIRED_ERROR = 'This is required';
 
-export const SCHEMA_TASKS = zodResolver(
-  z.object({
-    name: z.string({ required_error: DEFAULT_REQUIRED_ERROR }),
-    description: z.string({ required_error: DEFAULT_REQUIRED_ERROR }),
-  }),
-);
+export const SCHEMA_TASKS = Yup.object({
+  name: Yup.string().required(DEFAULT_REQUIRED_ERROR),
+  description: Yup.string().required(DEFAULT_REQUIRED_ERROR),
+});
 
-export const SCHEMA_USERS = zodResolver(
-  z.object({
-    name: z.string({ required_error: DEFAULT_REQUIRED_ERROR }),
-    email: z
-      .string({ required_error: DEFAULT_REQUIRED_ERROR })
-      .email({ message: 'Invalid email' }),
-    phone: z
-      .string({ required_error: DEFAULT_REQUIRED_ERROR })
-      .min(10, { message: 'Phone number must be at least 10 characters' })
-      .max(10, { message: 'Phone number must be at most 10 characters' }),
-  }),
-);
+export const SCHEMA_USERS = Yup.object({
+  name: Yup.string().required(DEFAULT_REQUIRED_ERROR),
+  email: Yup.string().required(DEFAULT_REQUIRED_ERROR).email('Invalid email'),
+  phone: Yup.string()
+    .required(DEFAULT_REQUIRED_ERROR)
+    .min(10, 'Phone number must be at least 10 characters')
+    .max(10, 'Phone number must be at most 10 characters'),
+});

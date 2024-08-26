@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from './app.module.css';
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ColumnDef } from '@tanstack/react-table';
@@ -21,34 +22,43 @@ import {
 } from '@st-fly/ui';
 
 export function App() {
+  const userDefault = {
+    id: '',
+    name: '',
+    email: '',
+    phone: '',
+  };
+
   const dispatch = useDispatch();
   const { loading, items: users } = useSelector(selectUsers);
 
-  const [user, setUser] = useState<UserType>();
+  const [userData, setUserData] = useState<UserType>(userDefault);
   const [showAddUser, isShowAddUser] = useState(false);
   const toggleShowAddUser = () => isShowAddUser(!showAddUser);
 
   const [showEditUser, isShowEditUser] = useState(false);
-  const toggleShowEditUser = useCallback(() => isShowEditUser(!showEditUser), [showEditUser]);
+  const toggleShowEditUser = () => isShowEditUser(!showEditUser);
 
   const handleAddUser = (user: UserType) => {
     dispatch(addUser({ ...user, id: generateNanoId(5) }));
+    setUserData(userDefault);
     toggleShowAddUser();
   };
 
-  const handleShowEditUser = useCallback((user: UserType) => {
-    setUser(user);
-    toggleShowEditUser();
-  }, [setUser, toggleShowEditUser]);
-
-  const handleEditUser = (user: UserType) => {
-    dispatch(editUser(user));
+  const handleShowEditUser = (user: UserType) => {
+    setUserData(user);
     toggleShowEditUser();
   };
 
-  const handleDeleteUser = useCallback((id: string) => {
+  const handleEditUser = (user: UserType) => {
+    dispatch(editUser(user));
+    setUserData(userDefault);
+    toggleShowEditUser();
+  };
+
+  const handleDeleteUser = (id: string) => {
     dispatch(deleteUser(id));
-  }, [dispatch]);
+  };
 
   const columns = useMemo<ColumnDef<UserType>[]>(
     () => [
@@ -102,7 +112,7 @@ export function App() {
         ),
       },
     ],
-    [handleDeleteUser, handleShowEditUser]
+    []
   );
 
   const renderUsers = () => {
@@ -138,7 +148,8 @@ export function App() {
       </section>
       <Modal show={showAddUser}>
         <UserForm
-          data={user}
+          key="add-user"
+          data={userData}
           title="Create New User"
           buttonSaveOnClick={handleAddUser}
           buttonCancelOnClick={toggleShowAddUser}
@@ -146,7 +157,8 @@ export function App() {
       </Modal>
       <Modal show={showEditUser}>
         <UserForm
-          data={user}
+          key="edit-user"
+          data={userData}
           title="Edit User"
           buttonSaveOnClick={handleEditUser}
           buttonCancelOnClick={toggleShowEditUser}
