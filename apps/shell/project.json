@@ -1,11 +1,11 @@
 {
-  "name": "host",
+  "name": "shell",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/host/src",
+  "sourceRoot": "apps/shell/src",
   "projectType": "application",
   "tags": [
     "type:app",
-    "scope:host"
+    "scope:shell"
   ],
   "targets": {
     "build": {
@@ -16,18 +16,18 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/host",
-        "index": "apps/host/src/index.html",
+        "outputPath": "dist/apps/shell",
+        "index": "apps/shell/src/index.html",
         "baseHref": "/",
-        "main": "apps/host/src/main.ts",
-        "tsConfig": "apps/host/tsconfig.app.json",
+        "main": "apps/shell/src/main.ts",
+        "tsConfig": "apps/shell/tsconfig.app.json",
         "assets": [
-          "apps/host/src/favicon.png",
-          "apps/host/src/assets"
+          "apps/shell/src/favicon.png",
+          "apps/shell/src/assets"
         ],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "apps/host/webpack.config.ts"
+        "webpackConfig": "apps/shell/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -39,8 +39,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/host/src/environments/environment.ts",
-              "with": "apps/host/src/environments/environment.prod.ts"
+              "replace": "apps/shell/src/environments/environment.ts",
+              "with": "apps/shell/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -49,7 +49,7 @@
           "namedChunks": false,
           "extractLicenses": true,
           "vendorChunk": false,
-          "webpackConfig": "apps/host/webpack.config.prod.ts"
+          "webpackConfig": "apps/shell/webpack.config.prod.ts"
         }
       }
     },
@@ -57,7 +57,7 @@
       "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "host:build",
+        "buildTarget": "shell:build",
         "hmr": true,
         "port": 3002,
         "maxWorkers": 3,
@@ -71,11 +71,16 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "host:build:development"
+          "buildTarget": "shell:build:development"
         },
         "production": {
-          "buildTarget": "host:build:production",
-          "hmr": false
+          "buildTarget": "shell:build:production",
+          "hmr": false,
+          "devRemotes": [
+            "users",
+            "tasks",
+            "reports"
+          ]
         }
       }
     },
@@ -83,15 +88,20 @@
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "host:build",
-        "port": 3002
+        "buildTarget": "shell:build",
+        "port": 3002,
+        "devRemotes": [
+          "users",
+          "tasks",
+          "reports"
+        ]
       },
       "configurations": {
         "development": {
-          "buildTarget": "host:build:development"
+          "buildTarget": "shell:build:development"
         },
         "production": {
-          "buildTarget": "host:build:production"
+          "buildTarget": "shell:build:production"
         }
       }
     }

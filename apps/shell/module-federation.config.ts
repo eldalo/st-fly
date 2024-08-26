@@ -4,12 +4,11 @@ const coreLibraries = new Set([
   'react',
   'react-dom',
   'react-router-dom',
-  '@tanstack/react-query',
   'axios',
 ]);
 
 const config: ModuleFederationConfig = {
-  name: 'host',
+  name: 'shell',
   remotes: ['users', 'tasks', 'reports'],
   shared: (libraryName, defaultConfig) => {
     if (coreLibraries.has(libraryName)) {
