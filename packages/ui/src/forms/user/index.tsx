@@ -1,32 +1,55 @@
 import styles from '../form.module.css';
 import { Formik, Form } from 'formik';
+import { useDispatch } from 'react-redux';
 
-import { SCHEMA_USERS } from '@st-fly/shared';
+import { addUser, editUser } from '@st-fly/hooks';
+import { generateNanoId, SCHEMA_USERS } from '@st-fly/shared';
 import { UserType } from '@st-fly/types';
 import { Button, FieldText } from '@st-fly/ui';
 
 type UserFormProps = {
-  data: UserType;
+  data?: UserType;
   title: string;
-  buttonSaveOnClick: (user: UserType) => void;
-  buttonCancelOnClick: () => void;
+  type: 'add' | 'edit';
+  cancelOnClick: () => void;
 };
 
 export const UserForm = ({
   data,
   title,
-  buttonSaveOnClick,
-  buttonCancelOnClick,
+  type,
+  cancelOnClick,
 }: UserFormProps) => {
-  console.log({ data });
+  const defaultData = {
+    id: '',
+    name: '',
+    email: '',
+    phone: '',
+  };
+  const dispatch = useDispatch();
+
+  const handleSubmit = (user: UserType, { resetForm }: { resetForm: () => void }) => {
+    if (type === 'add') {
+      dispatch(addUser({ ...user, id: generateNanoId(5) }));
+    } else {
+      dispatch(editUser(user));
+    }
+
+    resetForm();
+    cancelOnClick();
+  }
+
   return (
     <Formik
-      initialValues={data}
+      initialValues={data || defaultData}
       validationSchema={SCHEMA_USERS}
-      onSubmit={(values) => buttonSaveOnClick(values)}
+      onSubmit={handleSubmit}
+      enableReinitialize
+      resetForm
     >
       <Form className={styles.form}>
         <h3 className={styles.title}>{title}</h3>
+        <FieldText id="id" name="id" className="d-none" />
         <div className="row">
           <div className="col-12">
             <FieldText
@@ -71,7 +94,7 @@ export const UserForm = ({
               type="button"
               theme="white"
               width="width_100"
-              onClick={() => buttonCancelOnClick()}
+              onClick={cancelOnClick}
             >
               Cancel <i className="icon-Atom_Icon-Close" />
             </Button>

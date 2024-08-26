@@ -1,34 +1,54 @@
 import styles from '../form.module.css';
 import { Formik, Form } from 'formik';
+import { useDispatch } from 'react-redux';
 
-import { SCHEMA_TASKS } from '@st-fly/shared';
+import { addTask, editTask } from '@st-fly/hooks';
+import { generateNanoId, SCHEMA_TASKS } from '@st-fly/shared';
 import { TaskType } from '@st-fly/types';
 import { Button, FieldText, FieldTextArea } from '@st-fly/ui';
 
 type TaskFormProps = {
-  data: TaskType;
+  data?: TaskType;
   title: string;
-  buttonSaveOnClick: (task: TaskType) => void;
-  buttonCancelOnClick: () => void;
+  type: 'add' | 'edit';
+  cancelOnClick: () => void;
 };
 
 export const TaskForm = ({
   data,
   title,
-  buttonSaveOnClick,
-  buttonCancelOnClick,
+  type,
+  cancelOnClick,
 }: TaskFormProps) => {
+  const defaultData = {
+    id: '',
+    name: '',
+    description: '',
+  };
+  const dispatch = useDispatch();
+
+  const handleSubmit = (user: TaskType, { resetForm }: { resetForm: () => void }) => {
+    if (type === 'add') {
+      dispatch(addTask({ ...user, id: generateNanoId(5) }));
+    } else {
+      dispatch(editTask(user));
+    }
+
+    resetForm();
+    cancelOnClick();
+  }
+
   return (
     <Formik
-      initialValues={data}
+      initialValues={data || defaultData}
       validationSchema={SCHEMA_TASKS}
-      onSubmit={(values) => {
-        console.log('Data:', values);
-        buttonSaveOnClick(values);
-      }}
+      onSubmit={handleSubmit}
+      enableReinitialize
+      resetForm
     >
       <Form className={styles.form}>
         <h3 className={styles.title}>{title}</h3>
+        <FieldText id="id" name="id" className="d-none" />
         <div className="row">
           <div className="col-12">
             <FieldText
@@ -64,7 +84,7 @@ export const TaskForm = ({
               type="button"
               theme="white"
               width="width_100"
-              onClick={() => buttonCancelOnClick()}
+              onClick={cancelOnClick}
             >
               Cancel <i className="icon-Atom_Icon-Close" />
             </Button>
