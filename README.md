@@ -115,7 +115,7 @@ Use [Coin Gecko API](https://docs.coingecko.com/reference/introduction)
 
 ## Unit Tests
 
-😭 Pending
+😭 Pending (Little knowledge)
 
 ## Responsive
 
@@ -183,3 +183,9 @@ toast.warning('Danger in event')
 #### Justification:
 
 - Proper error management ensures that the application behaves predictably in case of request failures or input validation errors. It prioritizes both user experience and system security.
+
+## Deploy
+
+The Netlify platform was used for the deployment due to cost considerations.​
+
+### [Smart Talent Fly](https://st-fly.netlify.app/)
