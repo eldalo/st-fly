@@ -22,8 +22,10 @@ Smart Talent Fly monorepo for micro front-end architecture
 Monorepo for Smart Talent Fly Apps - workspace
 
 - apps
-  - host (main)
-  - auth (micro-frontend)
+  - host (main / shell)
+  - tasks (micro-frontend)
+  - reports (micro-frontend)
+  - users (micro-frontend)
 
 ## Requirements
 
@@ -59,19 +61,13 @@ nx reset
 npm run start
 ```
 
-### Run project and open the host app in the browser
-
-```bash
-npm run start:open
-```
-
-### Run project and update open api documentation
+### Run project mode dev
 
 ```bash
 npm run start:dev
 ```
 
-### Run project, Open the host app in the browser and update open api documentation
+### Run project, Open the host app in the browser
 
 ```bash
 npm run start:dev:open
@@ -89,12 +85,12 @@ If you want the `host` micro front-end to have auto-updating, your `project.json
 
 ```json
 {
-  "devRemotes": ["auth"]
+  "devRemotes": ["users"]
 }
 ```
 
 if have need the remote project to live reload update the `project.json` in remote project add the following configuration in serve options
-ex: `app/auth/project.json`
+ex: `app/users/project.json`
 
 ```json
 {
@@ -104,9 +100,7 @@ ex: `app/auth/project.json`
 
 ## Environment Variables
 
-| Variable Name              | Description                                                     | Default Value                    | Required | Example Value                    |
-| -------------------------- | --------------------------------------------------------------- | -------------------------------- | -------- | -------------------------------- |
-| `MF_URL_SUFFIX`            | Base URL suffix for microfrontends for the selected environment | None                             | Yes      | `dev.example.com`                |
-| `NX_GOOGLE_AUTH_CLIENT_ID` | Google OAuth client ID.                                         | None                             | Yes      | `your-google-auth-client-id`     |
-| `NX_OPEN_API_URL`          | URL for the Open API documentation.                             | `http://127.0.0.1:3001/api-json` | No       | `http://127.0.0.1:3001/api-json` |
-| `NX_API_BASE_URL`          | Base URL for the API.                                           | `http://127.0.0.1:3001/`         | No       | `http://127.0.0.1:3001/`         |
+| Variable Name              | Description              | Default Value                                    | Required |
+| -------------------------- | ------------------------ | ------------------------------------------------ | -------- |
+| `NX_COINGECKO_API`         | Base URL Coin Gecko API  | `https://api.coingecko.com/api/v3/coins/markets` | Yes      |
+| `NX_COINGECKO_CURRENCY`    | Currency Coin Gecko      |  `usd`                                           | Yes      |
