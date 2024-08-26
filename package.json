@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx reset && nx serve host --host=127.0.0.1",
-    "start:open": "nx reset && nx serve host --open --host=127.0.0.1",
-    "start:dev": "nx reset && nx serve host --host=127.0.0.1",
-    "build": "nx reset && nx build host",
+    "start": "nx reset && nx serve shell --host=127.0.0.1",
+    "start:open": "nx reset && nx serve shell --open --host=127.0.0.1",
+    "start:dev": "nx reset && nx serve shell --host=127.0.0.1",
+    "build": "nx reset && nx build shell",
     "build:reports": "nx reset && nx build reports",
     "build:tasks": "nx reset && nx build tasks",
     "build:users": "nx reset && nx build users"

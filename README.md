@@ -22,7 +22,7 @@ Smart Talent Fly monorepo for micro front-end architecture
 Monorepo for Smart Talent Fly Apps - workspace
 
 - apps
-  - host (main / shell)
+  - shell
   - tasks (micro-frontend)
   - reports (micro-frontend)
   - users (micro-frontend)
@@ -67,7 +67,7 @@ npm run start
 npm run start:dev
 ```
 
-### Run project, Open the host app in the browser
+### Run project, Open the shell app in the browser
 
 ```bash
 npm run start:dev:open
@@ -75,13 +75,13 @@ npm run start:dev:open
 
 ## Development Mode Configuration for Micro front-ends
 
-To handle the development mode of a micro front-end and enable auto-updating, you need to configure the `"devRemotes"` property in the host's `project.json` file. This allows the micro front-ends to automatically update during development.
+To handle the development mode of a micro front-end and enable auto-updating, you need to configure the `"devRemotes"` property in the shell's `project.json` file. This allows the micro front-ends to automatically update during development.
 
 ### Example
 
-If you want the `host` micro front-end to have auto-updating, your `project.json` file should look like this in the serve options:
+If you want the `shell` micro front-end to have auto-updating, your `project.json` file should look like this in the serve options:
 
-- `app/host/project.json`
+- `app/shell/project.json`
 
 ```json
 {
