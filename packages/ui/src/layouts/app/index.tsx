@@ -13,13 +13,13 @@ export const LayoutApp = () => {
             Smart Talent Fly
           </h1>
           <nav className={styles.navigation}>
-            <NavLink to="/app" className={styles.link}>
+            <NavLink to="/" className={styles.link}>
               Users <i className="icon-Atom_Icon-User-fill" />
             </NavLink>
-            <NavLink to="/app/tasks" className={styles.link}>
+            <NavLink to="/tasks" className={styles.link}>
               Tasks <i className="icon-Atom_Icon-Dropdown" />
             </NavLink>
-            <NavLink to="/app/reports" className={styles.link}>
+            <NavLink to="/reports" className={styles.link}>
               Reports <i className="icon-Atom_Icon-Filters" />
             </NavLink>
           </nav>

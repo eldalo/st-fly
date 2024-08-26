@@ -13,7 +13,7 @@ const Reports = lazy(() => import('@st-fly/reports-module'));
 
 const router = createBrowserRouter([
   {
-    path: 'app',
+    path: '',
     Component: LayoutApp,
     children: [
       {
