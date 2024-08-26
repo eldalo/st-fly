@@ -1,0 +1,21 @@
+version: '3'
+
+vars:
+  S3_BUCKET_SUFFIX:
+  APPS:
+
+tasks:
+  deploy-apps:
+    desc: Deploy apps to S3 bucket
+    cmds:
+      - |
+        APPS="{{ .APPS }}"
+        if [ -z "$APPS" ]; then
+          echo "No affected applications to deploy."
+          exit 0
+        fi
+
+        for app in $APPS; do
+          echo "Deploying $app to s3://$app.{{ .S3_BUCKET_SUFFIX }}"
+          aws s3 sync "dist/apps/$app" "s3://$app.{{ .S3_BUCKET_SUFFIX }}" --delete
+        done

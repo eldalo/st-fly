@@ -1,0 +1,51 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@st-fly/hooks": [
+        "packages/hooks/src/index.ts"
+      ],
+      "@st-fly/shared": [
+        "packages/shared/src/index.ts"
+      ],
+      "@st-fly/types": [
+        "packages/types/src/index.ts"
+      ],
+      "@st-fly/ui": [
+        "packages/ui/src/index.ts"
+      ],
+      "@st-fly/users-module": [
+        "apps/users/src/remote-entry.ts"
+      ],
+      "@st-fly/utils": [
+        "packages/utils/src/index.ts"
+      ],
+      "@st-fly/reports-module": [
+        "apps/reports/src/remote-entry.ts"
+      ],
+      "@st-fly/tasks-module": [
+        "apps/tasks/src/remote-entry.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}
