@@ -11,10 +11,8 @@
 
 import { Remotes } from '@nx/webpack';
 
-const URL_SUFFIX = process.env.MF_URL_SUFFIX;
-
 export const remotes: Remotes = [
-  ['users', `https://users.${URL_SUFFIX}/`],
-  ['tasks', `https://tasks.${URL_SUFFIX}/`],
-  ['reports', `https://reports.${URL_SUFFIX}/`],
+  ['reports', `https://st-fly-reports.vercel.app/`],
+  ['tasks', `https://st-fly-tasks.vercel.app/`],
+  ['users', `https://st-fly.vercel.app/`],
 ];
